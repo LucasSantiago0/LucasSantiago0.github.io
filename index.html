@@ -307,6 +307,12 @@
         // Adiciona um evento de clique ao GIF para mostrar o balão de mensagem
         var gif = document.getElementById('gif');
         gif.addEventListener('click', mostrarBalaoMensagem);
+
+        // Inicia a reprodução da música de fundo automaticamente após o carregamento da página
+        window.addEventListener('load', function() {
+            var audio = document.getElementById('background-music');
+            audio.play();
+        });
     </script>
 </body>
 </html>
