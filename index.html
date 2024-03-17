@@ -263,7 +263,7 @@
     </div>
 
     <!-- Áudio de fundo -->
-    <audio id="background-music" loop>
+    <audio id="background-music" loop autoplay>
         <source src="audio.mp3" type="audio/mp3">
         <source src="audio.ogg" type="audio/ogg">
         Your browser does not support the audio element.
@@ -277,6 +277,16 @@
             setTimeout(function() {
                 notification.style.display = 'none'; // Oculta a notificação após 3 segundos
             }, 3000); // Tempo em milissegundos
+        }
+
+        // Função para exibir o balão de mensagem quando o GIF é clicado
+        function mostrarBalaoMensagem() {
+            var balao = document.getElementById('balao-mensagem');
+            balao.style.display = 'block'; // Exibe o balão de mensagem
+            // Oculta o balão de mensagem após 3 segundos
+            setTimeout(function() {
+                balao.style.display = 'none';
+            }, 3000);
         }
 
         // Função para alternar entre som ativado e desativado
@@ -293,6 +303,10 @@
                 soundIcon.classList.add('fa-volume-off');
             }
         }
+
+        // Adiciona um evento de clique ao GIF para mostrar o balão de mensagem
+        var gif = document.getElementById('gif');
+        gif.addEventListener('click', mostrarBalaoMensagem);
 
         // Inicia a reprodução da música de fundo automaticamente após o carregamento da página
         window.addEventListener('load', function() {
