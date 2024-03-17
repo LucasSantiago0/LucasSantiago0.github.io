@@ -295,12 +295,12 @@
             var soundIcon = document.getElementById('sound-icon');
             if (audio.paused) {
                 audio.play();
-                soundIcon.classList.remove('fa-volume-mute');
+                soundIcon.classList.remove('fa-volume-off');
                 soundIcon.classList.add('fa-volume-up');
             } else {
                 audio.pause();
                 soundIcon.classList.remove('fa-volume-up');
-                soundIcon.classList.add('fa-volume-mute');
+                soundIcon.classList.add('fa-volume-off');
             }
         }
 
