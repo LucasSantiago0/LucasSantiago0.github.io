@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- Importando Font Awesome -->
+<script src="/fontawesome/js/all.min.js" crossorigin="anonymous"></script>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -167,6 +170,47 @@
             z-index: 999; /* Z-index para garantir que esteja acima de outros elementos */
             display: none; /* Inicialmente oculto */
         }
+
+        /* Estilos para o GIF */
+        #gif {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            z-index: 999; /* Garante que o GIF esteja sempre acima de outros elementos */
+            width: 80px; /* Defina a largura do GIF */
+            height: auto; /* Mantém a proporção original do GIF */
+        }
+
+        /* Estilos para o balão de mensagem */
+        .balao-mensagem {
+            position: fixed;
+            top: 65%; /* Posiciona o balão no topo da tela */
+            right: 4%; /* Posiciona o balão a 10% da margem direita */
+            background-color: #fff; /* Cor de fundo branca */
+            color: #000; /* Cor do texto preto */
+            padding: 10px 20px; /* Espaçamento interno */
+            border-radius: 10px; /* Borda arredondada */
+            z-index: 999; /* Garante que o balão esteja acima de outros elementos */
+            display: none; /* Inicialmente oculto */
+        }
+
+        /* Estilos para o controle de áudio */
+        .audio-control {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 999;
+        }
+
+        .audio-control button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .audio-control button:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -178,6 +222,7 @@
             <a href="#" class="header-btn" onclick="showNotification()">Meios de Comunicação</a>
             <a href="#" class="header-btn" onclick="showNotification()">O Jogo</a>
             <a href="#" class="header-btn" onclick="showNotification()">Comunidade</a>
+            <a href="#" class="header-btn" onclick="showNotification()">Doações</a> <!-- Novo botão "Doações" -->
         </div>
     </div>
     <div class="notification" id="notification">Calma meu Calabreso, jaja a gente lança</div> <!-- Div para a notificação -->
@@ -202,6 +247,28 @@
         </div>
     </footer>
 
+    <!-- GIF no canto inferior direito da tela -->
+    <img src="Hakon o Brabo.gif" alt="GIF" id="gif">
+
+    <!-- Balão de mensagem -->
+    <div id="balao-mensagem" class="balao-mensagem">
+        <p>Olá meu calabreso, ainda estamos em desenvolvimento. <br>Adicione o nosso jogo na sua lista de desejos da Steam.<br> Aqui está o link: <a href="http://www.vikingvalor.com.br" target="_blank">www.vikingvalor.com.br</a></p>
+    </div>
+
+    <!-- Controle de áudio -->
+    <div class="audio-control">
+        <button id="toggle-sound" onclick="toggleSound()">
+            <i id="sound-icon" class="fas fa-volume-up"></i>
+        </button>
+    </div>
+
+    <!-- Áudio de fundo -->
+    <audio id="background-music" loop autoplay>
+        <source src="audio.mp3" type="audio/mp3">
+        <source src="audio.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
         // Função para exibir a notificação
         function showNotification() {
@@ -211,6 +278,35 @@
                 notification.style.display = 'none'; // Oculta a notificação após 3 segundos
             }, 3000); // Tempo em milissegundos
         }
+
+        // Função para exibir o balão de mensagem quando o GIF é clicado
+        function mostrarBalaoMensagem() {
+            var balao = document.getElementById('balao-mensagem');
+            balao.style.display = 'block'; // Exibe o balão de mensagem
+            // Oculta o balão de mensagem após 3 segundos
+            setTimeout(function() {
+                balao.style.display = 'none';
+            }, 3000);
+        }
+
+        // Função para alternar entre som ativado e desativado
+        function toggleSound() {
+            var audio = document.getElementById('background-music');
+            var soundIcon = document.getElementById('sound-icon');
+            if (audio.paused) {
+                audio.play();
+                soundIcon.classList.remove('fa-volume-mute');
+                soundIcon.classList.add('fa-volume-up');
+            } else {
+                audio.pause();
+                soundIcon.classList.remove('fa-volume-up');
+                soundIcon.classList.add('fa-volume-mute');
+            }
+        }
+
+        // Adiciona um evento de clique ao GIF para mostrar o balão de mensagem
+        var gif = document.getElementById('gif');
+        gif.addEventListener('click', mostrarBalaoMensagem);
     </script>
 </body>
 </html>
