@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- Importando Font Awesome -->
+<script src="/fontawesome/js/all.min.js" crossorigin="anonymous"></script>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -190,6 +193,24 @@
             z-index: 999; /* Garante que o balão esteja acima de outros elementos */
             display: none; /* Inicialmente oculto */
         }
+
+        /* Estilos para o controle de áudio */
+        .audio-control {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 999;
+        }
+
+        .audio-control button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .audio-control button:focus {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -234,6 +255,20 @@
         <p>Olá meu calabreso, ainda estamos em desenvolvimento. <br>Adicione o nosso jogo na sua lista de desejos da Steam.<br> Aqui está o link: <a href="http://www.vikingvalor.com.br" target="_blank">www.vikingvalor.com.br</a></p>
     </div>
 
+    <!-- Controle de áudio -->
+    <div class="audio-control">
+        <button id="toggle-sound" onclick="toggleSound()">
+            <i id="sound-icon" class="fas fa-volume-up"></i>
+        </button>
+    </div>
+
+    <!-- Áudio de fundo -->
+    <audio id="background-music" loop autoplay>
+        <source src="audio.mp3" type="audio/mp3">
+        <source src="audio.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
         // Função para exibir a notificação
         function showNotification() {
@@ -252,6 +287,21 @@
             setTimeout(function() {
                 balao.style.display = 'none';
             }, 3000);
+        }
+
+        // Função para alternar entre som ativado e desativado
+        function toggleSound() {
+            var audio = document.getElementById('background-music');
+            var soundIcon = document.getElementById('sound-icon');
+            if (audio.paused) {
+                audio.play();
+                soundIcon.classList.remove('fa-volume-mute');
+                soundIcon.classList.add('fa-volume-up');
+            } else {
+                audio.pause();
+                soundIcon.classList.remove('fa-volume-up');
+                soundIcon.classList.add('fa-volume-mute');
+            }
         }
 
         // Adiciona um evento de clique ao GIF para mostrar o balão de mensagem
