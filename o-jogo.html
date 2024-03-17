@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Jogo - Viking Valor</title>
+    <style>
+        /* Coloque seu CSS aqui */
+        @font-face {
+            font-family: 'The Zombie Birds';
+            src: url('fonts/The Zombie Birds.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'The Zombie Birds', Arial, sans-serif;
+            background-image: url('Fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #FFF; /* Altera a cor do texto para branco */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centraliza o conteúdo na horizontal */
+        }
+
+        .header {
+            background-color: #333; /* Cor de fundo do cabeçalho */
+            padding: 20px;
+            width: 100%; /* Ajuste aqui */
+            box-sizing: border-box; /* Garante que a largura inclua o padding */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo img {
+            width: 40px;
+        }
+
+        .header-btns {
+            display: flex;
+        }
+
+        .header-btn {
+            background-color: #FFD700;
+            color: #333;
+            padding: 15px 25px;
+            margin: 0 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-btn:hover {
+            background-color: #FFA500;
+        }
+
+        .hero {
+            width: 90%;
+            max-width: 2200px; /* Largura máxima */
+            margin-top: 30px; /* Ajuste aqui */
+            margin-bottom: 30px; /* Ajuste aqui */
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start; /* Ajuste aqui */
+            padding-bottom: 30px;
+            box-sizing: border-box; /* Garante que a largura inclua o padding */
+        }
+
+.content {
+    width: 150%; /* Ajuste a largura da seção do lado esquerdo conforme necessário */
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay */
+    padding: 20px;
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
+    border-radius: 10px; /* Borda arredondada */
+}
+
+.image-container {
+    width: 200%; /* Ajuste a largura da seção do lado direito conforme necessário */
+    max-width: 570px; /* Largura máxima */
+    margin-top: 8px; /* Ajuste o recuo superior conforme necessário */
+    margin-bottom: 50px; /* Ajuste o recuo inferior conforme necessário */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+        .image-container img {
+            width: 80%; /* Ajuste aqui */
+            max-width: 500px; /* Largura máxima */
+            height: auto; /* Altura automática */
+            margin-bottom: 25px; /* Ajuste aqui */
+        }
+
+        footer {
+            background-color: #333; /* Cor de fundo do rodapé */
+            color: #FFF; /* Altera a cor do texto para branco */
+            padding: 20px 0;
+            text-align: center;
+            margin-top: auto; /* Ajuste aqui */
+            width: 100%; /* Ajuste aqui */
+            flex-shrink: 0; /* Ajuste aqui */
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-logo">
+            <img src="icone.png" alt="Ícone do Jogo">
+        </div>
+        <div class="header-btns">
+            <a href="index.html" class="header-btn">Home</a>
+            <a href="Comunicacao.html" class="header-btn">Meios de Comunicação</a>
+            <a href="#" class="header-btn" onclick="showNotification()">Seja um Apoiador</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="content">
+            <h1>O Jogo - Viking Valor</h1>
+            <h2>História</h2>
+            <p>A história se passa em Midgard, o reino dos mortais da mitologia nórdica, onde Hakon, um jovem guerreiro ambicioso, sonha em se tornar um líder lendário como seu pai. A vila de Hakon, Nordhrim, está sob constante ameaça de monstros e deuses nórdicos caídos. Ele é convocado para liderar uma missão de investigar a origem das criaturas e descobrir os motivos dos deuses. Hakon reúne um grupo de guerreiros com habilidades únicas e explora cidades governadas por diferentes deuses, recrutando aliados e desvendando segredos. A jornada culmina em uma batalha épica para restaurar a paz em Midgard e desvendar o mistério por trás da transformação dos deuses. Os jogadores tomarão decisões cruciais que moldarão o destino de Hakon e seus aliados neste mundo onde mitologia e realidade se entrelaçam.
+.</p>
+            <h2>Mecânica de Jogo</h2>
+            <p>Movimentação:
+ O jogador pode se mover livremente no mundo, porém as regiões serão punitivas caso o mesmo esteja muito fraco.
+ Cada parte do jogo exigirá um certo nível para que ele consiga matar as criaturas e sobreviver ao terreno hostil.<br>
+<br>
+Combate:
+  O combate é livre e ocorre em tempo real no mundo, o jogador poderá usar habilidades conforme for passando de nível. Além dos ataques comuns também poderá  contar com ajuda de aliados que recrutou no decorrer da história.
+ Cada inimigo derrotado dropará experiência e itens, quais podem ser equipados, destruídos ou negociado com outros jogadores.
+<br>
+<br>
+Loja/Craft:
+ No mundo existiram Lojas para comprar itens ou criar itens em mesas de Craft contidas nas cidades. Cada cidade terá seus itens exclusivos e atributos obrigatórios para uso do Item.
+.</p>
+        </div>
+
+        <div class="image-container">
+	    <img src="Galeria/Tela de Start.png" alt="Imagem 2">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/J7tbmt05F30?si=k_KtIkOFosKrPwrr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Controle de áudio -->
+    <div class="audio-control">
+        <button id="toggle-sound" onclick="toggleSound()">
+            <i id="sound-icon" class="fas fa-volume-up"></i>
+        </button>
+    </div>
+
+    <!-- Áudio de fundo -->
+    <audio id="background-music" loop autoplay>
+        <source src="audio.mp3" type="audio/mp3">
+        <source src="audio.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Função para exibir a notificação
+        function showNotification() {
+            var notification = document.getElementById('notification');
+            notification.style.display = 'block'; // Exibe a notificação
+            setTimeout(function() {
+                notification.style.display = 'none'; // Oculta a notificação após 3 segundos
+            }, 3000); // Tempo em milissegundos
+        }
+
+        // Função para alternar entre som ativado e desativado
+        function toggleSound() {
+            var audio = document.getElementById('background-music');
+            var soundIcon = document.getElementById('sound-icon');
+            if (audio.paused) {
+                audio.play(); // Inicia a reprodução do áudio se estiver pausado
+                soundIcon.classList.remove('fa-volume-off');
+                soundIcon.classList.add('fa-volume-up');
+            } else {
+                audio.pause(); // Pausa a reprodução do áudio se estiver tocando
+                soundIcon.classList.remove('fa-volume-up');
+                soundIcon.classList.add('fa-volume-off');
+            }
+        }
+    </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Viking Valor. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

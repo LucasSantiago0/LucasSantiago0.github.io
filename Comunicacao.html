@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<!-- Importando Font Awesome -->
+<script src="/fontawesome/js/all.min.js" crossorigin="anonymous"></script>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meios de Comunicação - Viking Valor</title>
+    <style>
+
+        /* Coloque seu CSS aqui */
+
+        @font-face {
+            font-family: 'The Zombie Birds';
+            src: url('fonts/The Zombie Birds.ttf') format('truetype'); /* Substitua 'the-zombie-birds.ttf' pelo nome do seu arquivo de fonte */
+            /* Adicione outras variações da fonte, se disponíveis (por exemplo, fonte itálica, negrito) */
+        }
+
+        body {
+            margin: 0;
+            padding: 20;
+            font-family: 'The Zombie Birds', Arial, sans-serif;
+            background-image: url('Fundo.jpg'); /* Adicione o mesmo fundo das outras páginas */
+            background-size: cover;
+            background-position: center;
+            color: #FFD700;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 800px; /* Altura ajustável conforme necessário */
+            border: none;
+        }
+
+        .header {
+            background-color: #333;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-logo img {
+            width: 40px;
+        }
+
+        .header-btns {
+            display: flex;
+        }
+
+        .header-btn {
+            background-color: #FFD700;
+            color: #333;
+            padding: 15px 25px;
+            margin: 0 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-btn:hover {
+            background-color: #FFA500;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-logo">
+            <img src="icone.png" alt="Ícone do Jogo">
+        </div>
+        <div class="header-btns">
+            <a href="index.html" class="header-btn">Home</a>
+	    <a href="o-jogo.html" class="header-btn">O Jogo</a>
+	    <a href="doacao.html" class="header-btn">Seja um Apoiador</a>
+            <!-- Adicione os demais botões do cabeçalho conforme necessário -->
+        </div>
+    </div>
+
+    <div class="container">
+        <h1></h1>
+        <!-- Substitua 'SEU_LINK_DE_INCORPORACAO' pelo link de incorporação do Google Forms -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScCNWOBuDmswxt6D3SypQ_hjv9RTCtM7YtQHwu_XIBKgVcW_g/viewform?embedded=true" width="640" height="980" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Viking Valor. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
