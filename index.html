@@ -263,7 +263,7 @@
     </div>
 
     <!-- Áudio de fundo -->
-    <audio id="background-music" loop autoplay>
+    <audio id="background-music" loop>
         <source src="audio.mp3" type="audio/mp3">
         <source src="audio.ogg" type="audio/ogg">
         Your browser does not support the audio element.
@@ -279,39 +279,28 @@
             }, 3000); // Tempo em milissegundos
         }
 
-        // Função para exibir o balão de mensagem quando o GIF é clicado
-        function mostrarBalaoMensagem() {
-            var balao = document.getElementById('balao-mensagem');
-            balao.style.display = 'block'; // Exibe o balão de mensagem
-            // Oculta o balão de mensagem após 3 segundos
-            setTimeout(function() {
-                balao.style.display = 'none';
-            }, 3000);
-        }
-
         // Função para alternar entre som ativado e desativado
         function toggleSound() {
             var audio = document.getElementById('background-music');
             var soundIcon = document.getElementById('sound-icon');
             if (audio.paused) {
-                audio.play();
+                audio.play(); // Inicia a reprodução do áudio se estiver pausado
                 soundIcon.classList.remove('fa-volume-off');
                 soundIcon.classList.add('fa-volume-up');
             } else {
-                audio.pause();
+                audio.pause(); // Pausa a reprodução do áudio se estiver tocando
                 soundIcon.classList.remove('fa-volume-up');
                 soundIcon.classList.add('fa-volume-off');
             }
         }
 
-        // Adiciona um evento de clique ao GIF para mostrar o balão de mensagem
-        var gif = document.getElementById('gif');
-        gif.addEventListener('click', mostrarBalaoMensagem);
-
         // Inicia a reprodução da música de fundo automaticamente após o carregamento da página
         window.addEventListener('load', function() {
             var audio = document.getElementById('background-music');
-            audio.play();
+            audio.play(); // Inicia a reprodução do áudio automaticamente
+            var soundIcon = document.getElementById('sound-icon');
+            soundIcon.classList.remove('fa-volume-off');
+            soundIcon.classList.add('fa-volume-up');
         });
     </script>
 </body>
